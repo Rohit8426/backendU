@@ -1,15 +1,23 @@
 import { Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
 
-const sequelize = new Sequelize({
+dotenv.config();
+// const sequelize = new Sequelize({
+//   dialect: 'postgres',
+//   host: process.env.DB_HOST || 'localhost',
+//   username: process.env.DB_USER || 'postgres',  
+//   password: process.env.DB_PASSWORD || '842611',  
+//   database: process.env.DB_NAME || 'umrah',
+//   database: process.env.DB_PORT,
+//   schema: 'umrahschema',
+//   logging: false,  
+// });
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres',
-  host: process.env.DB_HOST || 'localhost',
-  username: process.env.DB_USER || 'postgres',  
-  password: process.env.DB_PASSWORD || '842611',  
-  database: process.env.DB_NAME || 'umrah',
-  database: process.env.DB_PORT,
-  schema: 'umrahschema',
-  logging: false,  
+  logging: false,
 });
+
 
 
 export const connectDB = async () => {
