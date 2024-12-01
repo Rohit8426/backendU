@@ -82,6 +82,12 @@ app.get('/', (req, res) => {
   res.send('Server is up and running');
 });
 
+
+
+app.get('/env', (req, res) => {
+  res.json({ DATABASE_URL: process.env.DATABASE_URL || 'Not Set' });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api' , forgetRoutes);
