@@ -34,7 +34,7 @@ const app = express();
 const httpServer = createServer(app); 
 const io = new Server(httpServer, {
   cors: {
-    origin: 'https://umrah-user.codemeg.com/login', // Allow all origins; adjust this based on your needs
+    origin: '*', // Allow all origins; adjust this based on your needs
     methods: ['GET', 'POST'],
   },
 });
