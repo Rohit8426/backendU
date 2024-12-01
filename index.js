@@ -23,7 +23,6 @@ import setupAssociations from './models/associations.js';
 import agentBooking from './routes/agentBookingRoutes.js';
 import comparePackages from './routes/compareRoutes.js';
 import messageRoutes from './routes/messageRoutes.js';
-
 import cors from 'cors';
 
 
