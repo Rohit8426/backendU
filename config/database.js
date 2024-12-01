@@ -6,6 +6,7 @@ const sequelize = new Sequelize({
   username: process.env.DB_USER || 'postgres',  
   password: process.env.DB_PASSWORD || '842611',  
   database: process.env.DB_NAME || 'umrah',
+  database: process.env.DB_PORT,
   schema: 'umrahschema',
   logging: false,  
 });
