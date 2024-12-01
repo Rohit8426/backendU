@@ -10,6 +10,13 @@ const sequelize = new Sequelize({
   database: process.env.DB_NAME || 'umrah',
   database: process.env.DB_PORT,
   schema: 'umrahschema',
+  protocol: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true, // Ensures SSL is used
+      rejectUnauthorized: false, // Allows self-signed certificates (use only if necessary)
+    },
+  },
   logging: false,  
 });
 console.log('DATABASE_URL:', process.env.DATABASE_URL);
